@@ -1,0 +1,210 @@
+"""
+Python Basic Data Types Demonstration
+Includes edge cases, conversions, and validations.
+
+Data Types Covered:
+1. int
+2. float
+3. complex
+4. str
+5. bool
+6. list
+7. tuple
+8. set
+9. dict
+10. NoneType
+"""
+
+def integer_examples():
+    print("\n----- INTEGER EXAMPLES -----")
+
+    a = 10
+    b = -100
+    c = 0
+    large = 10**100   # very large integer
+
+    print("Positive:", a)
+    print("Negative:", b)
+    print("Zero:", c)
+    print("Large Integer:", large)
+
+    # Edge case
+    print("Boolean as int:", int(True), int(False))
+
+
+def float_examples():
+    print("\n----- FLOAT EXAMPLES -----")
+
+    x = 10.5
+    y = -0.000001
+    z = 1e10
+
+    print("Normal float:", x)
+    print("Small float:", y)
+    print("Scientific notation:", z)
+
+    # Edge cases
+    inf = float("inf")
+    nan = float("nan")
+
+    print("Infinity:", inf)
+    print("NaN:", nan)
+
+
+def complex_examples():
+    print("\n----- COMPLEX EXAMPLES -----")
+
+    c1 = 2 + 3j
+    c2 = complex(5, -2)
+
+    print("Complex number:", c1)
+    print("Another complex:", c2)
+
+    print("Real part:", c1.real)
+    print("Imaginary part:", c1.imag)
+
+
+def string_examples():
+    print("\n----- STRING EXAMPLES -----")
+
+    s1 = "Hello"
+    s2 = ""
+    s3 = "123"
+    s4 = "Hello\nWorld"
+
+    print("Normal string:", s1)
+    print("Empty string:", s2)
+    print("Numeric string:", s3)
+    print("String with newline:", s4)
+
+    # Edge cases
+    print("Length of empty string:", len(s2))
+    print("String * 3:", s1 * 3)
+
+
+def boolean_examples():
+    print("\n----- BOOLEAN EXAMPLES -----")
+
+    t = True
+    f = False
+
+    print("True value:", t)
+    print("False value:", f)
+
+    # Edge cases
+    print("bool(0):", bool(0))
+    print("bool(1):", bool(1))
+    print("bool(''):", bool(""))
+    print("bool('Python'):", bool("Python"))
+
+
+def list_examples():
+    print("\n----- LIST EXAMPLES -----")
+
+    l1 = [1, 2, 3]
+    l2 = []
+    l3 = [1, "hello", 3.5, True]
+
+    print("Normal list:", l1)
+    print("Empty list:", l2)
+    print("Mixed list:", l3)
+
+    # Edge cases
+    l1.append(4)
+    print("After append:", l1)
+
+    print("Access last element:", l1[-1])
+
+
+def tuple_examples():
+    print("\n----- TUPLE EXAMPLES -----")
+
+    t1 = (1, 2, 3)
+    t2 = ()
+    t3 = (1,)  # single element tuple
+
+    print("Normal tuple:", t1)
+    print("Empty tuple:", t2)
+    print("Single element tuple:", t3)
+
+    # Edge case
+    try:
+        t1[0] = 10
+    except TypeError as e:
+        print("Tuple is immutable:", e)
+
+
+def set_examples():
+    print("\n----- SET EXAMPLES -----")
+
+    s1 = {1, 2, 3}
+    s2 = set()
+    s3 = {1, 1, 2, 2, 3}
+
+    print("Normal set:", s1)
+    print("Empty set:", s2)
+    print("Duplicates removed:", s3)
+
+    s1.add(4)
+    print("After add:", s1)
+
+
+def dict_examples():
+    print("\n----- DICTIONARY EXAMPLES -----")
+
+    d1 = {"name": "Alice", "age": 25}
+    d2 = {}
+    d3 = {1: "one", 2: "two"}
+
+    print("Normal dictionary:", d1)
+    print("Empty dictionary:", d2)
+    print("Numeric keys:", d3)
+
+    # Edge case
+    d1["age"] = 30
+    print("Updated value:", d1)
+
+
+def none_examples():
+    print("\n----- NONE TYPE EXAMPLES -----")
+
+    x = None
+    print("None value:", x)
+    print("Type of None:", type(x))
+
+    # Edge case
+    if x is None:
+        print("x is None")
+
+
+def type_conversion_examples():
+    print("\n----- TYPE CONVERSION -----")
+
+    print("int('10'):", int("10"))
+    print("float('3.14'):", float("3.14"))
+    print("str(100):", str(100))
+    print("list('abc'):", list("abc"))
+
+    # Edge case
+    try:
+        int("abc")
+    except ValueError as e:
+        print("Invalid conversion:", e)
+
+
+def main():
+    integer_examples()
+    float_examples()
+    complex_examples()
+    string_examples()
+    boolean_examples()
+    list_examples()
+    tuple_examples()
+    set_examples()
+    dict_examples()
+    none_examples()
+    type_conversion_examples()
+
+
+if __name__ == "__main__":
+    main()
