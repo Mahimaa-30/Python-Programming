@@ -1,0 +1,61 @@
+class ListNode:
+    def __init__(self, val=0):
+        self.val = val
+        self.next = None
+
+
+# Function to swap nodes in pairs
+def swapPairs(head):
+    
+    dummy = ListNode(0)
+    dummy.next = head
+    prev = dummy
+    
+    while prev.next and prev.next.next:
+        
+        first = prev.next
+        second = prev.next.next
+        
+        # Swapping
+        first.next = second.next
+        second.next = first
+        prev.next = second
+        
+        # Move pointer forward
+        prev = first
+    
+    return dummy.next
+
+
+# Helper function to create linked list
+def createList(arr):
+    if not arr:
+        return None
+    
+    head = ListNode(arr[0])
+    current = head
+    
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    
+    return head
+
+
+# Helper function to print linked list
+def printList(head):
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    print(result)
+
+
+# User Input
+arr = list(map(int, input("Enter linked list elements: ").split()))
+
+head = createList(arr)
+new_head = swapPairs(head)
+
+print("After swapping:")
+printList(new_head)
